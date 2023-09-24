@@ -1,27 +1,25 @@
 import React, { useEffect } from 'react'
 import './App.css';
-import TopNav from './components/TopNav/TopNav';
+import Navbar from './components/Navbar/Navbar';
 // import Card from './components/Card/Card';
-import DashView from './components/DashBoard/DashView';
-import { useDispatch, useSelector} from 'react-redux'
+import Dashboard from './components/Dashboard/Dashboard';
+import { useDispatch} from 'react-redux'
 import { fetchAllData } from './Actions/DataAction';
-import Loading from './components/Loading/Loading';
 
 const App = () => {
   const dispatch = useDispatch();
-  const {allTickets} = useSelector(state => state.DataReducer);
    
   useEffect(() => {
     dispatch(fetchAllData());
   }, [dispatch])
 
-  return allTickets ? (
+  return (
     <div style={{paddingTop : "10px"}} >
-      <TopNav/>
+      <Navbar/>
       <hr style={{marginTop : "10px"}} />
-      <DashView/>
+      <Dashboard/>
     </div>
-  ) : <Loading/>
+  );
 }
 
 export default App

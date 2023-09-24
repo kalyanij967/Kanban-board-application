@@ -1,11 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { DiCodeigniter } from "react-icons/di";
+import { DiUnitySmall } from "react-icons/di";
 import { AiOutlinePlus } from "react-icons/ai";
-import "./DashView.css";
+import "./Dashboard.css";
 import Card from "../Card/Card";
 
-const DashView = () => {
+const Dashboard = () => {
   const { selectedData, user } = useSelector(
     (state) => state.SelectDataReducer
   );
@@ -20,7 +20,7 @@ const DashView = () => {
                 <div className="dashCardHeading flex-sb">
                   <div className="leftView">
                     {!user ? (
-                      <DiCodeigniter />
+                      <DiUnitySmall />
                     ) : (
                       <>
                         <div
@@ -33,15 +33,15 @@ const DashView = () => {
                               height: "100%",
                               borderRadius: "50%",
                             }}
-                            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
+                            src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg"
                             alt="UserImage"
                           />
                         </div>
                       </>
                     )}
                     <span>
-                      {" "}
-                      {elem[index]?.title} {elem[index]?.value?.length}
+                      {"  "}
+                      {elem[index]?.title}  <span className="index">{elem[index]?.value?.length}</span>
                     </span>
                   </div>
                   <div className="rightView">
@@ -49,7 +49,7 @@ const DashView = () => {
                     <span style={{ letterSpacing: "2px" }}>...</span>
                   </div>
                 </div>
-                <div className="dashList flex-gap-10">
+                <div className="dashList flex-gap-20">
                   {elem[index]?.value?.map((elem, ind) => {
                     return (
                       <Card id={elem.id} title={elem.title} tag={elem.tag} />
@@ -65,4 +65,4 @@ const DashView = () => {
   );
 };
 
-export default DashView;
+export default Dashboard;

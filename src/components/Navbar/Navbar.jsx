@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { TiThList } from "react-icons/ti";
-import "./TopNav.css";
+import { BsSliders2 } from "react-icons/bs";
+import "./Navbar.css";
 import { useDispatch, useSelector} from "react-redux";
 import { selectData } from "../../Actions/DataAction";
 
@@ -21,7 +21,7 @@ const getOrder = () => {
     return "priority";
   }
 }
-const TopNav = () => {
+const Navbar = () => {
   const [displayOnClick, setDisplayOnClick] = useState(false);
   const dispatch = useDispatch();
   const {allTickets, allUser} = useSelector(state => state.DataReducer);
@@ -59,11 +59,11 @@ const TopNav = () => {
           onClick={() => setDisplayOnClick(!displayOnClick)}
         >
           {" "}
-          <TiThList /> Display
+          <BsSliders2 /> Display
         </button>
         {displayOnClick && (
           <>
-            <div className="dropOnClick flex-gap-10 p-10">
+            <div className="dropOnClick flex-gap-20 p-10">
               <div className="selectGroup flex-sb">
                 <span>Grouping</span>
                 <select value={groupValue} onChange={(e) => handleGroupValue(e, true)} className="selectStyle" name="group" id="group">
@@ -87,4 +87,4 @@ const TopNav = () => {
   );
 };
 
-export default TopNav;
+export default Navbar;

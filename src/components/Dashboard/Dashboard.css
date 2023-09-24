@@ -1,10 +1,10 @@
 .dashContainer{
     display: flex;
     align-items: flex-start;
-    gap: 20px;
+    gap: 40px;
     flex-wrap: wrap;
-    background: lavender;
-    padding: 5px 10px;
+    background: rgb(248, 247, 247);
+    padding: 25px 10px;
 }
 
 .dashCardContainer{
@@ -12,6 +12,9 @@
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    gap: 5px;
-    width : 300px;
+    gap: 15px;
+    width : 450px;
+}
+.index{
+    color: grey;
 }
